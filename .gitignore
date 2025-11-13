@@ -1,0 +1,7 @@
+__pycache__/
+.env
+*.pyc
+*.pth
+*.safetensors
+*.ckpt
+.DS_Store

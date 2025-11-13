@@ -1,0 +1,12 @@
+{
+  "rows_yes_probs": [
+    0.9999850988388062,
+    0.9911296367645264,
+    0.928347647190094
+  ],
+  "order": [
+    "sexually_explicit",
+    "dangerous_content",
+    "violence_gore"
+  ]
+}
