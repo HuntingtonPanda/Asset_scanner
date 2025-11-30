@@ -1,7 +1,37 @@
+# Virtual environment
+.venv/
+venv/
+
+# Python caches
 __pycache__/
-.env
 *.pyc
-*.pth
+*.pyo
+*.pyd
+
+# Environment variables
+.env
+
+# Model files
 *.safetensors
 *.ckpt
+*.pt
+*.bin
+*.h5
+
+# System files
 .DS_Store
+Thumbs.db
+
+# Logs, data, and cache
+*.log
+logs/
+outputs/
+cache/
+datasets/
+checkpoints/
+
+# Jupyter notebooks autosaves
+.ipynb_checkpoints/
+
+# VS Code
+.vscode/

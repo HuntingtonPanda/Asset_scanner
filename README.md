@@ -1,6 +1,10 @@
 You might need to run this:
+hf auth login           //USED TO LOG IN
+
 python -m pip install --upgrade pip
 pip install torch transformers pillow tqdm
+
+.\.venv\Scripts\Activate.ps1
 
 ## Model Attribution
 This project uses the [ShieldGemma 2-4B-IT](https://huggingface.co/google/shieldgemma-2-4b-it)
