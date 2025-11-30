@@ -10,8 +10,13 @@ model_id = "google/shieldgemma-2-4b-it"
 #image = Image.open(requests.get(url, stream=True).raw)
 
 # ---------- limits ----------
-MAX_IMAGES = 10_000          # stop after this many images
+MAX_IMAGES = 10          # stop after this many images
 images_seen = 0
+
+# ------- model ------
+device = "cuda" if torch.cuda.is_available() else "cpu"
+model = ShieldGemma2ForImageClassification.from_pretrained(model_id).to(device).eval()
+processor = AutoProcessor.from_pretrained(model_id)
 
 def create_log(dir_name: str):
     doc_name = dir_name + "_result.txt"
@@ -21,31 +26,34 @@ def create_log(dir_name: str):
 
 def folder_walker(dir: str):
     global images_seen
+    global MAX_IMAGES
     #last = dir.split("/")[-1]
     lastp = os.path.basename(dir)
     #print(f"last: {last}, lastp: {lastp}")
     result_file = create_log(lastp)
-    
-    for filename in os.listdir(dir):
-        path = os.path.join(dir, filename)
-        if os.path.isfile(path):
-            print(f"File found: {path}")
-            probabilities = image_classifire(path)
-            prediction = threshold(probabilities)
-            
-            header = f"File name: {filename}\n"
-            result_file.write(header)
-            prediction_text = f"Prediction: {prediction}\n"
-            result_file.write(prediction_text)
-            probabilities_text = f"Probabilities: {probabilities}\n\n"
-            result_file.write(probabilities_text)
-            
-            images_seen += 1
-        else:
-            print("File not found!")
-            
-        if images_seen == 10:
-            return
+    try:
+        for filename in os.listdir(dir):
+            path = os.path.join(dir, filename)
+            if os.path.isfile(path):
+                print(f"File found: {path}")
+                probabilities = image_classifire(path)
+                prediction = threshold(probabilities)
+                
+                header = f"File name: {filename}\n"
+                result_file.write(header)
+                prediction_text = f"Prediction: {prediction}\n"
+                result_file.write(prediction_text)
+                probabilities_text = f"Probabilities: {probabilities}\n\n"
+                result_file.write(probabilities_text)
+                
+                images_seen += 1
+            else:
+                print("File not found!")
+                
+            if images_seen == MAX_IMAGES:
+                break
+    finally:
+        result_file.close()
     
     """
     # Use this if you have a folder of folders and want to do them all at once
@@ -85,10 +93,6 @@ def threshold(probabilities: tuple):
 
 def image_classifire(image_path: str):
     image = Image.open(image_path).convert("RGB")
-
-    device = "cuda" if torch.cuda.is_available() else "cpu"
-    model = ShieldGemma2ForImageClassification.from_pretrained(model_id).to(device).eval()
-    processor = AutoProcessor.from_pretrained(model_id)
 
     model_inputs = processor(images=[image], return_tensors="pt").to(device)
 
