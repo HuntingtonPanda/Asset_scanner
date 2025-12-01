@@ -1,0 +1,132 @@
+File name: Aegyptus.png
+Prediction: Safe
+Probabilities: tensor([[6.3627e-04, 9.9936e-01],
+        [1.3335e-04, 9.9987e-01],
+        [5.4045e-05, 9.9995e-01]])
+
+File name: ArenaItems01.png
+Prediction: Safe
+Probabilities: tensor([[1.2086e-01, 8.7914e-01],
+        [9.2373e-07, 1.0000e+00],
+        [1.0765e-07, 1.0000e+00]])
+
+File name: ArenaItems02.png
+Prediction: Safe
+Probabilities: tensor([[3.8651e-13, 1.0000e+00],
+        [1.0748e-08, 1.0000e+00],
+        [6.6563e-14, 1.0000e+00]])
+
+File name: Arenas01.png
+Prediction: Safe
+Probabilities: tensor([[0.0030, 0.9970],
+        [0.1703, 0.8297],
+        [0.0019, 0.9981]])
+
+File name: Arenas02.png
+Prediction: Safe
+Probabilities: tensor([[3.5780e-04, 9.9964e-01],
+        [3.5215e-04, 9.9965e-01],
+        [1.8087e-04, 9.9982e-01]])
+
+File name: Arenas03.png
+Prediction: May contain: pornographic material
+Probabilities: tensor([[0.9209, 0.0791],
+        [0.0104, 0.9896],
+        [0.0021, 0.9979]])
+
+File name: Arpegius_0.png
+Prediction: Safe
+Probabilities: tensor([[2.0183e-06, 1.0000e+00],
+        [1.8317e-06, 1.0000e+00],
+        [6.4454e-05, 9.9994e-01]])
+
+File name: Billinear01.png
+Prediction: May contain: pornographic material
+Probabilities: tensor([[9.4358e-01, 5.6424e-02],
+        [1.5847e-02, 9.8415e-01],
+        [4.8883e-04, 9.9951e-01]])
+
+File name: Colosseum.png
+Prediction: Safe
+Probabilities: tensor([[7.8207e-06, 9.9999e-01],
+        [8.8500e-06, 9.9999e-01],
+        [1.5496e-08, 1.0000e+00]])
+
+File name: Items01.png
+Prediction: Safe
+Probabilities: tensor([[3.3275e-09, 1.0000e+00],
+        [2.1508e-09, 1.0000e+00],
+        [4.3205e-12, 1.0000e+00]])
+
+File name: Objects01.png
+Prediction: Safe
+Probabilities: tensor([[2.1439e-04, 9.9979e-01],
+        [2.3293e-01, 7.6707e-01],
+        [2.4900e-02, 9.7510e-01]])
+
+File name: Office.png
+Prediction: Safe
+Probabilities: tensor([[2.1493e-05, 9.9998e-01],
+        [3.6529e-03, 9.9635e-01],
+        [5.3072e-05, 9.9995e-01]])
+
+File name: SplashBG.png
+Prediction: May contain: pornographic, dangerous material
+Probabilities: tensor([[0.9849, 0.0151],
+        [0.5278, 0.4722],
+        [0.0259, 0.9741]])
+
+File name: Splash_Screen.png
+Prediction: Safe
+Probabilities: tensor([[3.0262e-02, 9.6974e-01],
+        [3.5265e-04, 9.9965e-01],
+        [6.1195e-05, 9.9994e-01]])
+
+File name: Splash_Screen_RF.png
+Prediction: May contain: pornographic material
+Probabilities: tensor([[5.7635e-01, 4.2365e-01],
+        [1.7176e-04, 9.9983e-01],
+        [1.0315e-03, 9.9897e-01]])
+
+File name: UI01.png
+Prediction: May contain: pornographic material
+Probabilities: tensor([[0.9623, 0.0377],
+        [0.3634, 0.6366],
+        [0.1044, 0.8956]])
+
+File name: UI02.png
+Prediction: May contain: pornographic material
+Probabilities: tensor([[0.9988, 0.0012],
+        [0.1010, 0.8990],
+        [0.0172, 0.9828]])
+
+File name: UI03.png
+Prediction: May contain: pornographic, gory material
+Probabilities: tensor([[9.9999e-01, 8.0330e-06],
+        [2.5952e-01, 7.4048e-01],
+        [6.3790e-01, 3.6210e-01]])
+
+File name: UI04.png
+Prediction: May contain: pornographic material
+Probabilities: tensor([[6.7886e-01, 3.2114e-01],
+        [4.9230e-05, 9.9995e-01],
+        [2.2477e-04, 9.9978e-01]])
+
+File name: UI05.png
+Prediction: Safe
+Probabilities: tensor([[1.7366e-04, 9.9983e-01],
+        [1.1521e-09, 1.0000e+00],
+        [3.3192e-05, 9.9997e-01]])
+
+File name: UICards01.png
+Prediction: Safe
+Probabilities: tensor([[1.6607e-02, 9.8339e-01],
+        [1.0048e-05, 9.9999e-01],
+        [1.6921e-06, 1.0000e+00]])
+
+File name: WarMap.png
+Prediction: Safe
+Probabilities: tensor([[0.0054, 0.9946],
+        [0.0194, 0.9806],
+        [0.0012, 0.9988]])
+

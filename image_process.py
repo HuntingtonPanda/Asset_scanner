@@ -10,8 +10,7 @@ model_id = "google/shieldgemma-2-4b-it"
 #image = Image.open(requests.get(url, stream=True).raw)
 
 # ---------- limits ----------
-MAX_IMAGES = 10          # stop after this many images
-images_seen = 0
+MAX_IMAGES = 100          # stop after this many images
 
 # ------- model ------
 device = "cuda" if torch.cuda.is_available() else "cpu"
@@ -25,7 +24,7 @@ def create_log(dir_name: str):
     return f
 
 def folder_walker(dir: str):
-    global images_seen
+    images_seen = 0
     global MAX_IMAGES
     #last = dir.split("/")[-1]
     lastp = os.path.basename(dir)
@@ -69,11 +68,11 @@ def threshold(probabilities: tuple):
     pornagraphic = False
     dangerous = False
     gory = False
-    if probabilities[0][0] < 0.5:
+    if probabilities[0][0] > 0.5:
         pornagraphic = True
-    if probabilities[1][0] < 0.5:
+    if probabilities[1][0] > 0.5:
         dangerous = True
-    if probabilities[2][0] < 0.5:
+    if probabilities[2][0] > 0.5:
         gory = True  
 
     issues = []
@@ -92,7 +91,11 @@ def threshold(probabilities: tuple):
         
 
 def image_classifire(image_path: str):
-    image = Image.open(image_path).convert("RGB")
+    try:
+        image = Image.open(image_path)
+    except Exception as e:
+        print(f"Skipping {image_path}: not a valid image ({e})")
+        return None
 
     model_inputs = processor(images=[image], return_tensors="pt").to(device)
 
@@ -102,4 +105,4 @@ def image_classifire(image_path: str):
     return scores.probabilities
 
 if __name__ == "__main__":
-    folder_walker("C:/Users/cohun/Documents/ECENGR117/Asset_scanner/Game1")
+    folder_walker("C:/Users/cohun/Documents/ECENGR117/Asset_scanner/Gladihoppers")
